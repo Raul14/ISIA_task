@@ -46,7 +46,21 @@ public class Matriz {
             } 
         } 
         return matrizResultante; 
-    } 
+    }
+
+    public static Matriz trasponerMatriz(Matriz a){   
+        int i, j, filasA, columnasA; 
+        filasA = a.getDimension().height; 
+        columnasA = a.getDimension().width; 
+        Matriz matrizResultante = new Matriz(columnasA, filasA, false);
+        for (j = 0; j < filasA; j++) { 
+            for (i = 0; i < columnasA; i++) { 
+                matrizResultante.datos[j][i] = a.datos[i][j];
+            } 
+        } 
+        return matrizResultante; 
+    }
+    
 
     public static Matriz multiplicarDosMatrices(Matriz a, Matriz b) throws DimensionesIncompatibles { 
         if( a.getDimension().width != b.getDimension().height) throw new DimensionesIncompatibles("La multiplicación de matrices requiere que el número de columnas de la matrix A conincida con el número de filas de la matriz B");        

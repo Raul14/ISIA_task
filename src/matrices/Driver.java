@@ -29,6 +29,15 @@ public class Driver {
         } catch (DimensionesIncompatibles ex) {
             Logger.getLogger(Driver.class.getName()).log(Level.SEVERE, null, ex);
         }
+      
+        //Trasponer matriz
+        Matriz m5 = new Matriz(4, 3, true);
+        System.out.println(m5);
+        try {
+            System.out.println(Matriz.trasponerMatriz(m5));
+        } catch (Exception ex) {
+            Logger.getLogger(Driver.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }
