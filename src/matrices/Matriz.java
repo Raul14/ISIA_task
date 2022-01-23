@@ -26,8 +26,17 @@ public class Matriz {
                     datos[i][j] = rnd.nextInt(100);
         }
     }
+
     public Matriz(Dimension d, boolean inicializarAleatorio){
         this(d.height, d.width, inicializarAleatorio);
+    }
+
+    public void setDatos(int[][] datos){
+        this.datos = datos;
+    }
+
+    public int[][] getDatos(){
+        return this.datos;
     }
     
     public Dimension getDimension(){
@@ -71,11 +80,9 @@ public class Matriz {
         Matriz matrizResultante = new Matriz(filasA, columnasB, false);
         for (j = 0; j < filasA; j++) {
             for (i = 0; i < columnasB; i++) {
-                int aux = 0;
                 for (k = 0; k < filasB; k++) {
-                    aux += a.datos[k][j] * b.datos[i][k];
+                    matrizResultante.datos[i][j] += a.datos[k][j] * b.datos[i][k];
                 }
-                matrizResultante.datos[i][j] = aux;
             }
         }
         return matrizResultante;
