@@ -1,0 +1,6 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "src/tests/org-junit-platform-junit-platform-console-standalone-1.6.0-junit-platform-console-standalone-1.6.0.jar"
+    ]
+}
